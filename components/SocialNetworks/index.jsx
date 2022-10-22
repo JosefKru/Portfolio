@@ -29,7 +29,12 @@ const SocialNetworks = ({ className }) => {
       <ul className={cl(className, styles.list)}>
         {socialNetworks.map((sn) => (
           <li key={sn.id} className={styles.listItem}>
-            <a href={sn.href} target="_blank" className={styles.listLink}>
+            <a
+              href={sn.href}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.listLink}
+            >
               {React.createElement(sn.icon, {
                 color: 'black',
                 size: 50,
