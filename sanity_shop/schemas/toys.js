@@ -33,11 +33,21 @@ export default {
     },
     {
       name: 'imagesGallery',
-      title: 'Images gallery',
-      type: 'array',
-      of: [
+      title: 'Image',
+      type: 'image',
+      fields: [
         {
-          type: 'image',
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+          options: {
+            isHighlighted: true,
+          },
+        },
+        {
+          name: 'attribution',
+          type: 'string',
+          name: 'Attribution',
         },
       ],
 
@@ -60,17 +70,18 @@ export default {
     },
     {
       title: 'Description',
-      name: 'body',
+      name: 'description',
+      type: 'text',
       group: 'content',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-        },
-        {
-          type: 'image',
-        },
-      ],
+      // type: 'array',
+      // of: [
+      //   {
+      //     type: 'block',
+      //   },
+      //   {
+      //     type: 'image',
+      //   },
+      // ],
       validation: (Rule) => Rule.required(),
     },
     {

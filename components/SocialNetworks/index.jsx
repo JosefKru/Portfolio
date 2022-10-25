@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 import cl from 'classnames'
 import { FaTelegram, FaGithub } from 'react-icons/fa'
 import { SiCodewars } from 'react-icons/si'
+import { AiFillLinkedin } from 'react-icons/ai'
 import ScreenEgg from '../ScreenEgg'
 
 const socialNetworks = [
@@ -21,6 +22,11 @@ const socialNetworks = [
     href: 'https://www.codewars.com/users/JosefK',
     icon: SiCodewars,
   },
+  {
+    id: 4,
+    href: '#',
+    icon: AiFillLinkedin,
+  },
 ]
 
 const SocialNetworks = ({ className }) => {
@@ -31,7 +37,7 @@ const SocialNetworks = ({ className }) => {
           <li key={sn.id} className={styles.listItem}>
             <a
               href={sn.href}
-              target="_blank"
+              target={sn.href === '#' ? '' : '_blank'}
               rel="noreferrer"
               className={styles.listLink}
             >
