@@ -24,6 +24,7 @@
     bottom: 10%;
     left: 0;
     transition: transform 0.3s ease-out;
+    background-color: #73d0a2;
   }
 
   &:hover {
@@ -46,6 +47,7 @@
     ul {
       display: flex;
       justify-content: space-around;
+      padding-left: 0;
 
       li {
         margin-bottom: 0;

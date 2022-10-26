@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import {
+  Button,
   BuyMeCoffee,
   Cover,
   Portfolio,
@@ -15,7 +16,26 @@ const LOAD_MORE_STEP = 4
 
 export default function Home({ initialPortfolio, total }) {
   const [portfolio, setPortfolio] = useState(initialPortfolio)
-  console.log(portfolio)
+  const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE_STEP)
+  const [isLoading, setIsLoading] = useState(false)
+
+  const showLoadButton = total > loadedAmount
+
+  const getMoreProjects = async () => {
+    setIsLoading(true)
+
+    try {
+      const data = await fetch(
+        `/api/data?start=${loadedAmount}&end=${loadedAmount + LOAD_MORE_STEP}`
+      ).then((response) => response.json())
+      setLoadedAmount(loadedAmount + LOAD_MORE_STEP)
+      setPortfolio([...portfolio, ...data.portfolioList])
+      setIsLoading(false)
+    } catch (error) {
+      console.log(error)
+      setIsLoading(false)
+    }
+  }
 
   return (
     <div>
@@ -32,6 +52,18 @@ export default function Home({ initialPortfolio, total }) {
             <Portfolio key={item.slug.current} {...item} />
           ))}
         </PortfolioGrid>
+        {showLoadButton && (
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <Button onClick={getMoreProjects} disabled={isLoading}>
+              Load more...
+            </Button>
+          </div>
+        )}
       </Section>
     </div>
   )
