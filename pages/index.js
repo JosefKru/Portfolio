@@ -1,7 +1,8 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import {
   Button,
-  BuyMeCoffee,
+  SendMeMessage,
   Cover,
   Portfolio,
   PortfolioGrid,
@@ -12,7 +13,7 @@ import {
 
 import { loadData } from './api/data'
 
-const LOAD_MORE_STEP = 4
+const LOAD_MORE_STEP = 2
 
 export default function Home({ initialPortfolio, total }) {
   const [portfolio, setPortfolio] = useState(initialPortfolio)
@@ -39,10 +40,14 @@ export default function Home({ initialPortfolio, total }) {
 
   return (
     <div>
+      <Head>
+        <title>Alyakin Ivan</title>
+      </Head>
+
       <Section>
         <Cover title="Josef<br /> Kafka" />
         <SocialNetworks />
-        <BuyMeCoffee />
+        <SendMeMessage />
       </Section>
 
       <Section>

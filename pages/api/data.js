@@ -1,6 +1,6 @@
 import { client } from '../../lib/client'
 
-export default async function dataaa(req, res) {
+export default async function data(req, res) {
   const { start, end } = req.query
 
   if (isNaN(Number(start)) || isNaN(Number(end))) {

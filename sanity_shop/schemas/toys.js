@@ -73,16 +73,22 @@ export default {
       name: 'description',
       type: 'text',
       group: 'content',
-      // type: 'array',
-      // of: [
-      //   {
-      //     type: 'block',
-      //   },
-      //   {
-      //     type: 'image',
-      //   },
-      // ],
       validation: (Rule) => Rule.required(),
+    },
+    {
+      group: 'content',
+      title: 'Body content',
+      name: 'body',
+      type: 'array',
+      validation: (Rule) => Rule.required(),
+      of: [
+        {
+          type: 'block',
+        },
+        {
+          type: 'image',
+        },
+      ],
     },
     {
       title: 'Slug',

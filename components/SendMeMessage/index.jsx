@@ -3,11 +3,11 @@ import styles from './index.module.scss'
 import cl from 'classnames'
 import ScreenEgg from '../ScreenEgg'
 
-const BuyMeCoffee = ({ className }) => {
+const SendMeMessage = ({ className }) => {
   return (
     <ScreenEgg type="right">
-      <div className={cl(className, styles.buyCoffee)}>
-        <a href="#" className={styles.buyCoffeeButton}>
+      <div className={cl(className, styles.sendMeMessage)}>
+        <a href="#" className={styles.sendMeMessageButton}>
           Send me a message
         </a>
       </div>
@@ -15,4 +15,4 @@ const BuyMeCoffee = ({ className }) => {
   )
 }
 
-export default BuyMeCoffee
+export default SendMeMessage

@@ -1,7 +1,7 @@
 export { default as Portfolio } from './Portfolio'
 export { default as PortfolioGrid } from './PortfolioGrid'
 export { default as Button } from './Button'
-export { default as BuyMeCoffee } from './BuyMeCoffee'
+export { default as SendMeMessage } from './SendMeMessage'
 export { default as Content } from './Content'
 export { default as SocialNetworks } from './SocialNetworks'
 export { default as Title } from './Title'
