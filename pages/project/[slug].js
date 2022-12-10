@@ -1,8 +1,8 @@
+import Head from 'next/head'
 import styles from './styles.module.scss'
 import { Article, Content, Title } from '../../components'
 import { client } from '../../lib/client'
 import { format } from 'date-fns'
-import Head from 'next/head'
 
 const Project = ({ project }) => {
   const data = format(new Date(project.date), 'dd MMM yyyy')
