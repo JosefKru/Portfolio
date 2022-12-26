@@ -45,7 +45,7 @@ export default function Home({ initialPortfolio, total }) {
       </Head>
 
       <Section>
-        <Cover title="Josef<br /> Kafka" />
+        <Cover title='Ivan<br /> Alyakin' />
         <SocialNetworks />
         <SendMeMessage />
       </Section>

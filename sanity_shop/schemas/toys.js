@@ -19,12 +19,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'price',
-      title: 'Price',
-      type: 'number',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       title: 'Published Date',
       name: 'date',
       type: 'date',
@@ -34,39 +28,12 @@ export default {
     {
       name: 'imagesGallery',
       title: 'Image',
-      type: 'image',
-      fields: [
-        {
-          name: 'caption',
-          type: 'string',
-          title: 'Caption',
-          options: {
-            isHighlighted: true,
-          },
-        },
-        {
-          name: 'attribution',
-          type: 'string',
-          name: 'Attribution',
-        },
-      ],
-
-      // понять как здесь можно добавить caption для alt
-      // fields: [
-      //   {
-      //     name: 'caption',
-      //     type: 'string',
-      //     title: 'Caption',
-      //     options: {
-      //       isHighlighted: true,
-      //     },
-      //   },
-      //   {
-      //     name: 'attribution',
-      //     type: 'string',
-      //     name: 'Attribution',
-      //   },
-      // ],
+      type: 'array',
+      of: [{ type: 'image' }],
+      options: {
+        hotspot: true,
+      },
+      validation: (Rule) => Rule.required(),
     },
     {
       title: 'Description',

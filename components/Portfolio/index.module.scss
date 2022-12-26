@@ -3,6 +3,12 @@
     margin-bottom: 0.7em;
   }
 
+  &Image {
+    position: relative;
+    width: 150px;
+    height: 150px;
+  }
+
   &Description {
     line-height: 1.6;
   }
@@ -11,7 +17,7 @@
     display: grid;
     grid-template-columns: 6rem 1fr;
     align-items: start;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 
   &Link {

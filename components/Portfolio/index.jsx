@@ -20,16 +20,16 @@ const Portfolio = ({
       className={cl(className, styles.project)}
     >
       <a className={styles.projectLink}>
-        <Title type="small" className={styles.projectTitle}>
+        <Title type='small' className={styles.projectTitle}>
           {title}
         </Title>
         <div className={styles.projectContent}>
           <div className={styles.projectImage}>
             <Image
-              src={urlFor(imagesGallery).url()}
+              src={urlFor(imagesGallery[0]).url()}
               alt={imagesGallery.caption}
-              width="100"
-              height="100"
+              layout='fill'
+              objectFit='contain'
             />
           </div>
           <p className={styles.projectDescription}>{description}</p>
