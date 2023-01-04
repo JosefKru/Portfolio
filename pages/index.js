@@ -70,6 +70,10 @@ export default function Home({ initialPortfolio, total }) {
           </div>
         )}
       </Section>
+
+      <Section>
+        <Title type='small'>About Me</Title>
+      </Section>
     </div>
   )
 }

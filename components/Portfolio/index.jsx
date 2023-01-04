@@ -27,7 +27,6 @@ const Portfolio = ({
           <div className={styles.projectImage}>
             <Image
               src={urlFor(imagesGallery[0]).url()}
-              alt={imagesGallery.caption}
               layout='fill'
               objectFit='contain'
             />
