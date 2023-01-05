@@ -72,7 +72,7 @@ export default function Home({ initialPortfolio, total }) {
       </Section>
 
       <Section>
-        <Title type='small'>About Me</Title>
+        <Title color='red'>About Me</Title>
       </Section>
     </div>
   )
