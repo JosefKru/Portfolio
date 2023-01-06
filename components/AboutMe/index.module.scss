@@ -1,0 +1,53 @@
+.aboutMe {
+  &Avatar {
+    background: url('/avatar.png') no-repeat top right;
+    background-size: contain;
+    padding: -10% 0 10% 0;
+  }
+
+  &Description {
+    width: 800px;
+  }
+
+  &Title {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0.5em;
+
+    &::after {
+      content: '';
+    }
+
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        left: 0;
+        height: 0.5em;
+        background: #a29df3;
+        z-index: -1;
+        bottom: 0;
+        transition: width 0.3s;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .aboutMe {
+    &Avatar {
+      background: url('/avatar.png') no-repeat top left;
+      background-size: contain;
+      padding: -10% 0 10% 0;
+    }
+
+    &Description {
+      width: 300px;
+    }
+    &Title {
+      margin-top: 350px;
+    }
+  }
+}

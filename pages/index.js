@@ -10,6 +10,7 @@ import {
   SocialNetworks,
   Title,
 } from '../components'
+import AboutMe from '../components/AboutMe'
 
 import { loadData } from './api/data'
 
@@ -73,6 +74,7 @@ export default function Home({ initialPortfolio, total }) {
 
       <Section>
         <Title color='red'>About Me</Title>
+        <AboutMe />
       </Section>
     </div>
   )

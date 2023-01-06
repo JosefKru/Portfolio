@@ -14,7 +14,7 @@ const Project = ({ project, gallery }) => {
     return {
       original: galleryOfItem[0].imagesGallery[index].asset.url,
       thumbnail: urlFor(galleryOfItem[0].imagesGallery[index].asset.url).url(),
-      originalHeight: '900px',
+      originalHeight: '500px',
       thumbnailHeight: '60px',
     }
   })
