@@ -9,8 +9,8 @@ import {
   Section,
   SocialNetworks,
   Title,
+  AboutMe,
 } from '../components'
-import AboutMe from '../components/AboutMe'
 
 import { loadData } from './api/data'
 
@@ -73,8 +73,13 @@ export default function Home({ initialPortfolio, total }) {
       </Section>
 
       <Section>
-        <Title color='red'>About Me</Title>
+        <Title>About Me</Title>
         <AboutMe />
+      </Section>
+
+      <Section>
+        {/* <Title color='red'>Contact Me</Title> */}
+        {/* <Contact /> */}
       </Section>
     </div>
   )

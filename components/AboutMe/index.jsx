@@ -1,32 +1,54 @@
-import Link from 'next/link'
 import React from 'react'
-import Title from '../Title'
 import styles from './index.module.scss'
 import cn from 'classnames'
 
 const AboutMe = ({ className }) => {
   return (
     <div className={cn(className, styles.aboutMe)}>
-      <div className={styles.aboutMeAvatar}>
-        <div className={styles.aboutMeDescription}>
-          <Title type='small' className={styles.aboutMeTitle}></Title>
-          <p>
-            Hi there! My name is Ivan, and I am a web developer based in Moscow.
-          </p>
-          <p>...</p>
-          <p>
-            I enjoy staying up to date with the latest web development trends
-            and technologies. In my free time, I like to compose music or create
-            videos.
-          </p>
-          <p>
-            My goal is to continue growing as a developer and to work on
-            impactful projects that make a difference. I am always looking for
-            new opportunities to learn and grow, and I am excited to see where
-            my career takes me next.
-          </p>
-        </div>
+      <div className={styles.aboutMeDescription}>
+        <p>
+          Hello! My name is Ivan, I'm a frontend developer from Moscow with over
+          a year of experience working on personal projects.
+        </p>
+        <p>
+          {/* My technical skills include <b className={styles.aboutMeBlue}>HTML</b>
+          , <b className={styles.aboutMeGreen}>CSS</b>,{' '}
+          <b className={styles.aboutMePurple}>JavaScript</b>,{' '}
+          <b className={styles.aboutMeRed}>TypeScript</b>,{' '}
+          <b className={styles.aboutMeOrange}>React</b>,{' '}
+          <b className={styles.aboutMeOcean}>Redux toolkit</b>,{' '}
+          <b className={styles.aboutMePink}>NextJS</b>,{' '}
+          <b className={styles.aboutMeGreen}>Tailwind</b>,{' '}
+          <b className={styles.aboutMeBlue}>Sanity</b>. I am interested in
+          developing in this area and am looking for opportunities to
+          participate in real projects and learn new skills. */}
+          My technical skills include{' '}
+          <span>
+            HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS,
+            Tailwind, Sanity
+          </span>
+          . I am interested in developing in this area and am looking for
+          opportunities to participate in real projects and learn new skills.
+        </p>
+        <p>
+          I have a desire for learning and independence, which helps me to
+          successfully solve complex problems. I enjoy teamwork and am always
+          willing to work with other developers to achieve mutual success.
+        </p>
+        <p>
+          I like to keep abreast of the latest web development trends and
+          technologies. In my free time, I like to be creative: composing music
+          or creating videos.
+        </p>
+        <p>
+          My goal is to continue to develop as a developer and work on important
+          projects that change the world for the better. I am always looking for
+          new opportunities to learn and grow and am excited to see where my
+          career will take me next.
+        </p>
       </div>
+
+      <div className={styles.aboutMeAvatar}></div>
     </div>
   )
 }

@@ -1,12 +1,21 @@
 .aboutMe {
+  display: flex;
+
   &Avatar {
     background: url('/avatar.png') no-repeat top right;
     background-size: contain;
-    padding: -10% 0 10% 0;
+    width: 500px;
+    height: 500px;
   }
 
   &Description {
-    width: 800px;
+    padding-right: 20px;
+    width: 700px;
+    color: #6e6e6e;
+
+    span {
+      color: #303030;
+    }
   }
 
   &Title {
@@ -14,33 +23,47 @@
     position: relative;
     display: inline-block;
     margin-bottom: 0.5em;
+  }
 
-    &::after {
-      content: '';
-    }
+  &Blue {
+    color: #4b86b4;
+  }
 
-    &:hover {
-      &::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        left: 0;
-        height: 0.5em;
-        background: #a29df3;
-        z-index: -1;
-        bottom: 0;
-        transition: width 0.3s;
-      }
-    }
+  &Green {
+    color: #45af7e;
+  }
+
+  &Purple {
+    color: #776ce6;
+  }
+
+  &Red {
+    color: #e66c6c;
+  }
+
+  &Orange {
+    color: #e6ca6c;
+  }
+
+  &Ocean {
+    color: #6cc6e6;
+  }
+
+  &Pink {
+    color: #e66ca7;
   }
 }
 
 @media only screen and (max-width: 800px) {
   .aboutMe {
+    flex-direction: column-reverse;
+    align-items: center;
+
     &Avatar {
       background: url('/avatar.png') no-repeat top left;
       background-size: contain;
-      padding: -10% 0 10% 0;
+      width: 300px;
+      height: 300px;
     }
 
     &Description {

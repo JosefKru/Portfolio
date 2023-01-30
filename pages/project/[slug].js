@@ -71,15 +71,16 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const query = `*[_type == "toys" && slug.current == '${slug}'][0]`
-
-  const project = await client.fetch(query)
-  const gallery = await client.fetch(`*[_type == "toys"] {
+  const query_project = `*[_type == "toys" && slug.current == '${slug}'][0]`
+  const query_gallery = `*[_type == "toys"] {
     _id,
     imagesGallery[] {
      asset->{url}
     }
-  }`)
+  }`
+
+  const project = await client.fetch(query_project)
+  const gallery = await client.fetch(query_gallery)
 
   return {
     props: {
