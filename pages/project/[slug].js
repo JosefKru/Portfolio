@@ -27,7 +27,6 @@ const Project = ({ project, gallery }) => {
 
       <Title className={styles.projectTitle}>{project.title}</Title>
       <p className={styles.projectData}>{data}</p>
-      <Content body={project.body} />
 
       <div className={styles.projectImage}>
         <ReactImageGallery
@@ -36,13 +35,14 @@ const Project = ({ project, gallery }) => {
           slideInterval={5000}
           slideDuration={800}
           showNav={true}
-          autoPlay={false}
+          autoPlay={true}
           items={items}
-          showFullscreenButton={true}
+          showFullscreenButton={false}
           showPlayButton={false}
           showBullets={true}
         />
       </div>
+      <Content body={project.body} />
     </Article>
   )
 }
