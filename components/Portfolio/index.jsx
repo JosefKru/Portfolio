@@ -6,14 +6,7 @@ import Title from '../Title'
 import Image from 'next/image'
 import { urlFor } from '../../lib/client'
 
-const Portfolio = ({
-  className,
-  date,
-  title,
-  imagesGallery,
-  description,
-  slug,
-}) => {
+const Portfolio = ({ className, title, imagesGallery, description, slug }) => {
   return (
     <Link
       href={`/project/${encodeURIComponent(slug.current)}`}
