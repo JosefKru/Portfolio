@@ -1,12 +1,33 @@
 import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import styles from './index.module.scss'
+import { useForm } from 'react-hook-form'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Contact = () => {
-  const form = useRef()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: 'onBlur',
+  })
+
+  const onSubmit = (data) => {
+    sendEmail()
+    toast.success('Your message has been sent', {
+      duration: 5000,
+      iconTheme: {
+        primary: '#4b86b4',
+        secondary: '#fff',
+      },
+    })
+    reset()
+  }
 
   const sendEmail = (e) => {
-    e.preventDefault()
+    // e.preventDefault()
 
     emailjs
       .sendForm(
@@ -24,16 +45,46 @@ const Contact = () => {
         }
       )
   }
+
+  const form = useRef()
+
   return (
-    <form ref={form} onSubmit={sendEmail} className={styles.form}>
-      <input type='text' name='user_name' placeholder='Name' />
+    <>
+      <Toaster />
+      <form
+        ref={form}
+        onSubmit={handleSubmit(onSubmit)}
+        className={styles.form}
+      >
+        <input
+          type='text'
+          name='name'
+          placeholder='Name'
+          {...register('name', { required: true })}
+          style={errors?.name && { borderColor: '#e3adad' }}
+        />
 
-      <input type='email' name='user_email' placeholder='Email' />
+        <input
+          type='email'
+          name='email'
+          placeholder='Email'
+          {...register('email', { required: true })}
+          style={errors?.email && { borderColor: '#e3adad' }}
+        />
 
-      <textarea name='message' placeholder='Message' />
+        <textarea
+          name='message'
+          placeholder='Message'
+          {...register('message', { required: true })}
+          style={errors?.message && { borderColor: '#e3adad' }}
+        />
 
-      <input type='submit' value='Send' />
-    </form>
+        {(errors?.name || errors?.email || errors?.message) && (
+          <p>Please fill in all fields</p>
+        )}
+        <input type='submit' value='Send message' />
+      </form>
+    </>
   )
 }
 

@@ -8,7 +8,7 @@
     height: 150px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 2px solid #43ad76;
+    border: 2px solid #adcbe3;
     border-radius: 4px;
     background-color: #f8f8f8;
     margin: 8px 0px;
@@ -16,7 +16,7 @@
 
     &:focus {
       outline: none !important;
-      box-shadow: 0 0 3px #73d0a2;
+      border: 2px solid #73d0a2;
     }
   }
 
@@ -27,17 +27,16 @@
     box-sizing: border-box;
     background-color: #f8f8f8;
     border-radius: 4px;
-    border: 2px solid #43ad76;
+    border: 2px solid #adcbe3;
 
     &:focus {
       outline: none !important;
-      box-shadow: 0 0 3px #73d0a2;
+      border: 2px solid #73d0a2;
     }
   }
 
   input[type='submit'] {
     border-radius: 50px;
-
     width: 150px;
     background-color: #43ad76;
     border: none;
