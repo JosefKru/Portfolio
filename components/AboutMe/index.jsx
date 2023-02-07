@@ -11,23 +11,12 @@ const AboutMe = ({ className }) => {
           a year of experience working on personal projects.
         </p>
         <p>
-          {/* My technical skills include <b className={styles.aboutMeBlue}>HTML</b>
-          , <b className={styles.aboutMeGreen}>CSS</b>,{' '}
-          <b className={styles.aboutMePurple}>JavaScript</b>,{' '}
-          <b className={styles.aboutMeRed}>TypeScript</b>,{' '}
-          <b className={styles.aboutMeOrange}>React</b>,{' '}
-          <b className={styles.aboutMeOcean}>Redux toolkit</b>,{' '}
-          <b className={styles.aboutMePink}>NextJS</b>,{' '}
-          <b className={styles.aboutMeGreen}>Tailwind</b>,{' '}
-          <b className={styles.aboutMeBlue}>Sanity</b>. I am interested in
-          developing in this area and am looking for opportunities to
-          participate in real projects and learn new skills. */}
           My technical skills include{' '}
           <span>
             HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS,
-            Tailwind, Sanity
-          </span>
-          . I am interested in developing in this area and am looking for
+            Tailwind, Sanity.
+          </span>{' '}
+          I am interested in developing in this area and am looking for
           opportunities to participate in real projects and learn new skills.
         </p>
         <p>
