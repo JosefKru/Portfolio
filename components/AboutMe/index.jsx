@@ -7,8 +7,8 @@ const AboutMe = ({ className }) => {
     <div className={cn(className, styles.aboutMe)}>
       <div className={styles.aboutMeDescription}>
         <p>
-          Hello! My name is Ivan, I'm a frontend developer from Moscow with over
-          a year of experience working on personal projects.
+          Hello! My name is Ivan, I&apos;m a frontend developer from Moscow with
+          over a year of experience working on personal projects.
         </p>
         <p>
           My technical skills include{' '}
