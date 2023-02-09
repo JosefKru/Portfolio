@@ -1,8 +1,10 @@
-import React, { useRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import styles from './index.module.scss'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
+
+export const contactRef = forwardRef(null)
 
 const Contact = () => {
   const {
@@ -27,8 +29,6 @@ const Contact = () => {
   }
 
   const sendEmail = (e) => {
-    // e.preventDefault()
-
     emailjs
       .sendForm(
         'service_2e1bo9r',
@@ -46,13 +46,11 @@ const Contact = () => {
       )
   }
 
-  const form = useRef()
-
   return (
     <>
       <Toaster />
       <form
-        ref={form}
+        ref={contactRef}
         onSubmit={handleSubmit(onSubmit)}
         className={styles.form}
       >

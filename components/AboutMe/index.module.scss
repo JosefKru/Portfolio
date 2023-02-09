@@ -29,7 +29,6 @@
 @media only screen and (max-width: 800px) {
   .aboutMe {
     flex-direction: column-reverse;
-    // align-items: center;
 
     &Avatar {
       background: url('/avatar.png') no-repeat top left;
