@@ -5,8 +5,8 @@
 
   &Image {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 500px;
+    height: 300px;
   }
 
   &Description {
@@ -15,7 +15,7 @@
 
   &Content {
     display: grid;
-    grid-template-columns: 6rem 1fr;
+    grid-template-rows: 13rem 1fr;
     align-items: start;
     gap: 3rem;
   }
@@ -35,11 +35,13 @@
 @media only screen and (max-width: 800px) {
   .project {
     &Image {
-      display: none;
+      width: 320px;
+      height: 200px;
     }
 
     &Content {
-      grid-template-columns: 1fr;
+      grid-template-rows: 10rem 1fr;
+      gap: 0;
     }
   }
 }

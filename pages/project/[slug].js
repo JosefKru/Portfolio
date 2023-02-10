@@ -10,39 +10,42 @@ const Project = ({ project, gallery }) => {
   const data = format(new Date(project.date), 'dd MMM yyyy')
   const galleryOfItem = gallery.filter((item) => item._id === project._id)
 
-  const items = gallery[0].imagesGallery.map((_, index) => {
+  const items = galleryOfItem[0].imagesGallery.map((_, index) => {
     return {
       original: galleryOfItem[0].imagesGallery[index].asset.url,
       thumbnail: urlFor(galleryOfItem[0].imagesGallery[index].asset.url).url(),
-      originalHeight: '500px',
-      thumbnailHeight: '60px',
+      originalHeight: 'auto',
+      thumbnailHeight: 'auto',
     }
   })
 
   return (
-    <Article backUrl='/' className={styles.project}>
+    <Article backUrl='/'>
       <Head>
         <title>{project.metaTitle}</title>
+        <base target='_blank' />
       </Head>
 
-      <Title className={styles.projectTitle}>{project.title}</Title>
-      <p className={styles.projectData}>{data}</p>
+      <div className={styles.project}>
+        <Title className={styles.projectTitle}>{project.title}</Title>
+        <p className={styles.projectData}>{data}</p>
 
-      <div className={styles.projectImage}>
-        <ReactImageGallery
-          showThumbnails={true}
-          thumbnailPosition='bottom'
-          slideInterval={5000}
-          slideDuration={800}
-          showNav={true}
-          autoPlay={true}
-          items={items}
-          showFullscreenButton={false}
-          showPlayButton={false}
-          showBullets={true}
-        />
+        <div className={styles.projectImage}>
+          <ReactImageGallery
+            showThumbnails={true}
+            thumbnailPosition='bottom'
+            slideInterval={5000}
+            slideDuration={800}
+            showNav={true}
+            autoPlay={true}
+            items={items}
+            showFullscreenButton={true}
+            showPlayButton={false}
+            showBullets={true}
+          />
+        </div>
+        <Content body={project.body} />
       </div>
-      <Content body={project.body} />
     </Article>
   )
 }

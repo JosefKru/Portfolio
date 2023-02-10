@@ -13,3 +13,24 @@
     padding-bottom: 20px;
   }
 }
+
+@media only screen and (max-width: 800px) {
+  .project {
+    &Title {
+      margin-bottom: 0.5rem;
+      margin-right: 1.5rem;
+    }
+
+    &Image {
+      width: auto;
+    }
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .project {
+    &Image {
+      width: auto;
+    }
+  }
+}

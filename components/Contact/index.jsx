@@ -33,7 +33,7 @@ const Contact = () => {
       .sendForm(
         'service_2e1bo9r',
         'template_efeylm4',
-        form.current,
+        contactRef.current,
         'Ub7F2x9MTVHibIcxU'
       )
       .then(
