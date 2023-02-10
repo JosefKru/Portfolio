@@ -10,7 +10,7 @@ const Project = ({ project, gallery }) => {
   const data = format(new Date(project.date), 'dd MMM yyyy')
   const galleryOfItem = gallery.filter((item) => item._id === project._id)
 
-  const items = gallery[1].imagesGallery.map((_, index) => {
+  const items = gallery[0].imagesGallery.map((_, index) => {
     return {
       original: galleryOfItem[0].imagesGallery[index].asset.url,
       thumbnail: urlFor(galleryOfItem[0].imagesGallery[index].asset.url).url(),
