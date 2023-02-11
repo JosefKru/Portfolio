@@ -10,7 +10,7 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     reset,
   } = useForm({
     mode: 'onBlur',
@@ -80,7 +80,7 @@ const Contact = () => {
         {(errors?.name || errors?.email || errors?.message) && (
           <p>Please fill in all fields</p>
         )}
-        <input type='submit' value='Send message' disabled={!isValid} />
+        <input type='submit' value='Send message' />
       </form>
     </>
   )
