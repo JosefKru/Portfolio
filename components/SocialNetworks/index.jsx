@@ -1,10 +1,9 @@
 import React from 'react'
 import styles from './index.module.scss'
 import cl from 'classnames'
-import { FaTelegram, FaGithub } from 'react-icons/fa'
-import { SiCodewars } from 'react-icons/si'
-import { AiFillLinkedin } from 'react-icons/ai'
 import ScreenEgg from '../ScreenEgg'
+import { FaTelegram, FaGithub, FaPrint } from 'react-icons/fa'
+import { SiCodewars } from 'react-icons/si'
 
 const socialNetworks = [
   {
@@ -24,21 +23,21 @@ const socialNetworks = [
   },
   {
     id: 4,
-    href: '#',
-    icon: AiFillLinkedin,
+    href: 'https://dmitrov.hh.ru/applicant/resumes/view?resume=9fdec062ff0978f95d0039ed1f41766972754e&print=true',
+    icon: FaPrint,
   },
 ]
 
 const SocialNetworks = ({ className }) => {
   return (
-    <ScreenEgg type="left">
+    <ScreenEgg type='left'>
       <ul className={cl(className, styles.list)}>
         {socialNetworks.map((sn) => (
           <li key={sn.id} className={styles.listItem}>
             <a
               href={sn.href}
               target={sn.href === '#' ? '' : '_blank'}
-              rel="noreferrer"
+              rel='noreferrer'
               className={styles.listLink}
             >
               {React.createElement(sn.icon, {
