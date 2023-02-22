@@ -1,4 +1,4 @@
-import React, { createRef, forwardRef } from 'react'
+import React, { createRef } from 'react'
 import emailjs from '@emailjs/browser'
 import styles from './index.module.scss'
 import { useForm } from 'react-hook-form'

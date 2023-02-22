@@ -23,7 +23,7 @@ const socialNetworks = [
   },
   {
     id: 4,
-    href: 'https://dmitrov.hh.ru/applicant/resumes/view?resume=9fdec062ff0978f95d0039ed1f41766972754e&print=true',
+    href: 'https://hh.ru/applicant/resumes/view?resume=9fdec062ff0978f95d0039ed1f41766972754e',
     icon: FaPrint,
   },
 ]
