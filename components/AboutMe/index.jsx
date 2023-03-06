@@ -14,7 +14,7 @@ const AboutMe = ({ className }) => {
           My technical skills include{' '}
           <span>
             HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS,
-            Tailwind, Sanity.
+            Fresh, Tailwind, Sanity.
           </span>{' '}
           I am interested in developing in this area and am looking for
           opportunities to participate in real projects and learn new skills.
