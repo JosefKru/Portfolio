@@ -6,7 +6,7 @@ import toast, { Toaster } from 'react-hot-toast'
 
 export const contactRef = createRef(null)
 
-const Contact = () => {
+const Contact = ({ isEnglish }) => {
   const {
     register,
     handleSubmit,
@@ -18,13 +18,18 @@ const Contact = () => {
 
   const onSubmit = (data) => {
     sendEmail()
-    toast.success('Your message has been sent', {
-      duration: 5000,
-      iconTheme: {
-        primary: '#4b86b4',
-        secondary: '#fff',
-      },
-    })
+    toast.success(
+      isEnglish
+        ? 'Your message has been sent'
+        : 'Ваше сообщение было отправлено',
+      {
+        duration: 5000,
+        iconTheme: {
+          primary: '#4b86b4',
+          secondary: '#fff',
+        },
+      }
+    )
     reset()
   }
 
@@ -57,7 +62,7 @@ const Contact = () => {
         <input
           type='text'
           name='name'
-          placeholder='Name'
+          placeholder={isEnglish ? 'Name' : 'Имя'}
           {...register('name', { required: true })}
           style={errors?.name && { borderColor: '#e3adad' }}
         />
@@ -65,22 +70,26 @@ const Contact = () => {
         <input
           type='email'
           name='email'
-          placeholder='Email'
+          placeholder={isEnglish ? 'Email' : 'Эл. Почта'}
           {...register('email', { required: true })}
           style={errors?.email && { borderColor: '#e3adad' }}
         />
 
         <textarea
           name='message'
-          placeholder='Message'
+          placeholder={isEnglish ? 'Message' : 'Сообщение'}
           {...register('message', { required: true })}
           style={errors?.message && { borderColor: '#e3adad' }}
         />
 
         {(errors?.name || errors?.email || errors?.message) && (
-          <p>Please fill in all fields</p>
+          <p>
+            {isEnglish
+              ? 'Please fill in all fields'
+              : 'Пожалуйста, заполните все поля'}
+          </p>
         )}
-        <input type='submit' value='Send message' />
+        <input type='submit' value={isEnglish ? 'Send message' : 'Отправить'} />
       </form>
     </>
   )

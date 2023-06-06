@@ -12,8 +12,11 @@ import {
   AboutMe,
   Contact,
 } from '../components'
-
 import { loadData } from './api/data'
+import LanguageSwitcher from '../components/LanguageSwitcher/LanguageSwitcher'
+import { IntlProvider } from 'react-intl'
+import en from './../static/en.json'
+import ru from './../static/ru.json'
 
 const LOAD_MORE_STEP = 2
 
@@ -21,12 +24,12 @@ export default function Home({ initialPortfolio, total }) {
   const [portfolio, setPortfolio] = useState(initialPortfolio)
   const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE_STEP)
   const [isLoading, setIsLoading] = useState(false)
+  const [isEnglish, setIsEnglish] = useState(true)
 
   const showLoadButton = total > loadedAmount
 
   const getMoreProjects = async () => {
     setIsLoading(true)
-
     try {
       const data = await fetch(
         `/api/data?start=${loadedAmount}&end=${loadedAmount + LOAD_MORE_STEP}`
@@ -42,46 +45,52 @@ export default function Home({ initialPortfolio, total }) {
 
   return (
     <div>
-      <Head>
-        <title>Alyakin Ivan</title>
-      </Head>
+      <IntlProvider locale='en' messages={isEnglish ? en : ru}>
+        <Head>
+          <title>{isEnglish ? 'Alyakin Ivan' : 'Алякин Иван'}</title>
+        </Head>
 
-      <Section>
-        <Cover title='Ivan<br /> Alyakin' />
-        <SocialNetworks />
-        <SendMeMessage />
-      </Section>
+        <Section>
+          <Cover
+            title={isEnglish ? 'Ivan<br /> Alyakin' : 'Иван<br /> Алякин'}
+            isEnglish={isEnglish}
+            setIsEnglish={setIsEnglish}
+          />
+          <SocialNetworks />
+          <SendMeMessage />
+        </Section>
 
-      <Section>
-        <Title>My Portfolio</Title>
-        <PortfolioGrid>
-          {portfolio.map((item) => (
-            <Portfolio key={item.slug.current} {...item} />
-          ))}
-        </PortfolioGrid>
-        {showLoadButton && (
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'center',
-            }}
-          >
-            <Button onClick={getMoreProjects} disabled={isLoading}>
-              Load more...
-            </Button>
-          </div>
-        )}
-      </Section>
+        <Section>
+          <Title>{isEnglish ? 'My Portfolio' : 'Портфолио'}</Title>
+          <PortfolioGrid>
+            {portfolio.map((item) => (
+              <Portfolio key={item.slug.current} {...item} />
+            ))}
+          </PortfolioGrid>
+          {showLoadButton && (
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+              }}
+            >
+              <Button onClick={getMoreProjects} disabled={isLoading}>
+                {isEnglish ? 'Load more...' : 'Загрузить больше...'}
+              </Button>
+            </div>
+          )}
+        </Section>
 
-      <Section>
-        <Title>About Me</Title>
-        <AboutMe />
-      </Section>
+        <Section>
+          <Title>{isEnglish ? 'About Me' : 'Обо Мне'}</Title>
+          <AboutMe />
+        </Section>
 
-      <Section>
-        <Title color='red'>Contact Me</Title>
-        <Contact />
-      </Section>
+        <Section>
+          <Title color='red'>{isEnglish ? 'Contact Me' : 'Прямая связь'}</Title>
+          <Contact isEnglish={isEnglish} />
+        </Section>
+      </IntlProvider>
     </div>
   )
 }

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 500px;
+  position: relative;
 
   textarea {
     width: 100%;
@@ -53,6 +54,13 @@
       color: black;
     }
   }
+
+  p {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    color: #e27d7d;
+  }
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -70,6 +78,10 @@
       height: 48px;
       padding: 16px 32px;
       margin: 4px 0px;
+    }
+
+    p {
+      top: -50px;
     }
   }
 }

@@ -1,13 +1,6 @@
 .aboutMe {
   display: flex;
 
-  &Avatar {
-    background: url('/avatar.png') no-repeat top right;
-    background-size: contain;
-    width: 500px;
-    height: 500px;
-  }
-
   &Description {
     padding-right: 20px;
     width: 700px;
@@ -16,13 +9,16 @@
     span {
       color: #303030;
     }
+    p {
+      margin-top: 0;
+    }
   }
 
-  &Title {
-    font-weight: bold;
-    position: relative;
-    display: inline-block;
-    margin-bottom: 0.5em;
+  &Avatar {
+    background: url('/avatar.png') no-repeat top right;
+    background-size: contain;
+    width: 500px;
+    height: 500px;
   }
 }
 
@@ -39,6 +35,7 @@
 
     &Description {
       width: 300px;
+      margin-top: 10px;
     }
     &Title {
       margin-top: 350px;

@@ -3,8 +3,12 @@ import styles from './index.module.scss'
 import cl from 'classnames'
 import ScreenEgg from '../ScreenEgg'
 import { contactRef } from '../Contact'
+import { useIntl } from 'react-intl'
 
 const SendMeMessage = ({ className }) => {
+  const intl = useIntl()
+  const buttonText = intl.formatMessage({ id: 'page.sendMeMessage.button' })
+
   return (
     <ScreenEgg type='right'>
       <div className={cl(className, styles.sendMeMessage)}>
@@ -14,7 +18,7 @@ const SendMeMessage = ({ className }) => {
           }
           className={styles.sendMeMessageButton}
         >
-          Send me a message
+          {buttonText}
         </a>
       </div>
     </ScreenEgg>
