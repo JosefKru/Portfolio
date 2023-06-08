@@ -17,15 +17,13 @@
 
 - [**Social Network**](https://alyakin.vercel.app/project/social-network-facepalm): Мой первый пет-проект
 
-## Навыки 🛠️
+## Мои навыки 🛠️
 
 - Языки программирования: HTML5, CSS3, JavaScript, TypeScript
 - Фреймворки и библиотеки: React, Redux, Next.js
 - UI-библиотеки: Tailwind CSS
 - Headless CMS: Sanity, Shopify
 - Инструменты: Git, Node.js
-
-
 
 ## Связаться со мной 📧
 
