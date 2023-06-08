@@ -1,34 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Моё портфолио 👨‍💻
 
-## Getting Started
+Добро пожаловать в моё [**портфолио**](https://alyakin.vercel.app)! Здесь вы найдете примеры моих проектов и информацию обо мне.
 
-First, run the development server:
+## Описание 📄
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Этот репозиторий содержит моё портфолио в области фронтенд-разработки, где я демонстрирую свои проекты и достижения.
+Мои проекты включают использование современных фреймворков и технологий, таких как React, Redux, NextJS и т.д., а также JavaScript и TypeScript.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Проекты 🚀
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [**Fixifoot**](https://fixifoot.com): Филиппинский онлайн-магазин. 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **Tokenopolis**: Инвестиционно-строительная компания.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- [**Room4mommy**](https://room4mommy.vercel.app/): Онлайн-магазин детских вещей.
 
-## Learn More
+- [**Social Network**](https://alyakin.vercel.app/project/social-network-facepalm): Мой первый пет-проект
 
-To learn more about Next.js, take a look at the following resources:
+## Навыки 🛠️
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Языки программирования: HTML5, CSS3, JavaScript, TypeScript
+- Фреймворки и библиотеки: React, Redux, Next.js
+- UI-библиотеки: Tailwind CSS
+- Headless CMS: Sanity, Shopify
+- Инструменты: Git, Node.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Связаться со мной 📧
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [Мой telegram](https://t.me/josefKru)
+- [Мой профиль LinkedIn](https://www.linkedin.com/in/ivan-alyakin-976842243/)
+- Электронная почта: josefkaru@gmail.com
