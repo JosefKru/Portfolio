@@ -19,11 +19,11 @@
 
 ## Мои навыки 🛠️
 
-- Языки программирования: HTML5, CSS3, JavaScript, TypeScript
-- Фреймворки и библиотеки: React, Redux, Next.js
-- UI-библиотеки: Tailwind CSS
-- Headless CMS: Sanity, Shopify
-- Инструменты: Git, Node.js
+- Языки программирования: **HTML5, CSS3, JavaScript, TypeScript**
+- Фреймворки и библиотеки: **React, Redux, Next.js, Fresh**
+- UI-библиотеки: **Tailwind CSS**
+- Headless CMS: **Sanity, Shopify**
+- Инструменты: **Git, Node.js, Deno**
 
 ## Связаться со мной 📧
 
