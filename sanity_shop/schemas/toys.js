@@ -14,7 +14,19 @@ export default {
     {
       title: 'Title',
       name: 'title',
-      type: 'string',
+      type: 'object',
+      fields: [
+        {
+          title: 'English',
+          name: 'en',
+          type: 'string',
+        },
+        {
+          title: 'Russian',
+          name: 'ru',
+          type: 'string',
+        },
+      ],
       group: 'content',
       validation: (Rule) => Rule.required(),
     },
@@ -38,24 +50,43 @@ export default {
     {
       title: 'Description',
       name: 'description',
-      type: 'text',
+      type: 'object',
+      fields: [
+        {
+          title: 'English',
+          name: 'en',
+          type: 'string',
+        },
+        {
+          title: 'Russian',
+          name: 'ru',
+          type: 'string',
+        },
+      ],
       group: 'content',
       validation: (Rule) => Rule.required(),
     },
     {
-      group: 'content',
       title: 'Body content',
       name: 'body',
-      type: 'array',
-      validation: (Rule) => Rule.required(),
-      of: [
+      type: 'object',
+      fields: [
         {
-          type: 'block',
+          title: 'English',
+          name: 'en',
+          type: 'array',
+          of: [{ type: 'block' }, { type: 'image' }],
+          validation: (Rule) => Rule.required(),
         },
         {
-          type: 'image',
+          title: 'Russian',
+          name: 'ru',
+          type: 'array',
+          of: [{ type: 'block' }, { type: 'image' }],
+          validation: (Rule) => Rule.required(),
         },
       ],
+      group: 'content',
     },
     {
       title: 'Slug',

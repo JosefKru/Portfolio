@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {
   Button,
   SendMeMessage,
@@ -13,10 +13,10 @@ import {
   Contact,
 } from '../components'
 import { loadData } from './api/data'
-import LanguageSwitcher from '../components/LanguageSwitcher/LanguageSwitcher'
 import { IntlProvider } from 'react-intl'
 import en from './../static/en.json'
 import ru from './../static/ru.json'
+import { LanguageContext } from '../contexts/LanguageContext'
 
 const LOAD_MORE_STEP = 2
 
@@ -24,7 +24,7 @@ export default function Home({ initialPortfolio, total }) {
   const [portfolio, setPortfolio] = useState(initialPortfolio)
   const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE_STEP)
   const [isLoading, setIsLoading] = useState(false)
-  const [isEnglish, setIsEnglish] = useState(true)
+  const { isEnglish, setIsEnglish } = useContext(LanguageContext)
 
   const showLoadButton = total > loadedAmount
 
@@ -61,10 +61,14 @@ export default function Home({ initialPortfolio, total }) {
         </Section>
 
         <Section>
-          <Title>{isEnglish ? 'My Portfolio' : 'Портфолио'}</Title>
+          <Title>{isEnglish ? 'My portfolio' : 'Портфолио'}</Title>
           <PortfolioGrid>
             {portfolio.map((item) => (
-              <Portfolio key={item.slug.current} {...item} />
+              <Portfolio
+                key={item.slug.current}
+                isEnglish={isEnglish}
+                {...item}
+              />
             ))}
           </PortfolioGrid>
           {showLoadButton && (
@@ -82,12 +86,12 @@ export default function Home({ initialPortfolio, total }) {
         </Section>
 
         <Section>
-          <Title>{isEnglish ? 'About Me' : 'Обо Мне'}</Title>
+          <Title>{isEnglish ? 'About me' : 'Обо мне'}</Title>
           <AboutMe />
         </Section>
 
         <Section>
-          <Title color='red'>{isEnglish ? 'Contact Me' : 'Прямая связь'}</Title>
+          <Title color='red'>{isEnglish ? 'Contact me' : 'Напишите мне'}</Title>
           <Contact isEnglish={isEnglish} />
         </Section>
       </IntlProvider>

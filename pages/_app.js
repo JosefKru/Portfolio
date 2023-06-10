@@ -1,3 +1,4 @@
+import { LanguageContextProvider } from '../contexts/LanguageContext'
 import '../styles/global.scss'
 import NextNProgress from 'nextjs-progressbar'
 
@@ -11,7 +12,9 @@ function MyApp({ Component, pageProps }) {
         height={5}
         showOnShallow={true}
       />
-      <Component {...pageProps} />
+      <LanguageContextProvider>
+        <Component {...pageProps} />
+      </LanguageContextProvider>
     </>
   )
 }

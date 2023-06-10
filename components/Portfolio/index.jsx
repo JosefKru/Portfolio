@@ -6,7 +6,14 @@ import Title from '../Title'
 import Image from 'next/image'
 import { urlFor } from '../../lib/client'
 
-const Portfolio = ({ className, title, imagesGallery, description, slug }) => {
+const Portfolio = ({
+  className,
+  title,
+  imagesGallery,
+  description,
+  slug,
+  isEnglish,
+}) => {
   return (
     <Link
       href={`/project/${encodeURIComponent(slug.current)}`}
@@ -14,7 +21,7 @@ const Portfolio = ({ className, title, imagesGallery, description, slug }) => {
     >
       <a className={styles.projectLink}>
         <Title type='small' className={styles.projectTitle}>
-          {title}
+          {isEnglish ? title.en : title.ru}
         </Title>
         <div className={styles.projectContent}>
           <div className={styles.projectImage}>
@@ -22,9 +29,12 @@ const Portfolio = ({ className, title, imagesGallery, description, slug }) => {
               src={urlFor(imagesGallery[0]).url()}
               layout='fill'
               objectFit='contain'
+              alt=''
             />
           </div>
-          <p className={styles.projectDescription}>{description}</p>
+          <p className={styles.projectDescription}>
+            {isEnglish ? description.en : description.ru}
+          </p>
         </div>
       </a>
     </Link>
