@@ -1,9 +1,9 @@
 {
-  "page.about.greeting": "Hello! My name is Ivan, I'm a frontend developer from Moscow withover a year of experience working on personal projects.",
-  "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS, Fresh, Tailwind, Sanity.</span> I am interested in developing in this area and am looking for opportunities to participate in real projects and learn new skills.",
-  "page.about.adaptable": "I have a desire for learning and independence, which helps me to successfully solve complex problems. I enjoy teamwork and am always willing to work with other developers to achieve mutual success.",
+  "page.about.greeting": "Hello! My name is Ivan, I'm a frontend developer from Moscow.",
+  "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS, Node.js, Fresh, Tailwind, Sanity.</span> I am constantly striving for development in this field and seeking opportunities to participate in interesting projects to expand my skills.",
+  "page.about.adaptable": "I have a strong drive for learning and independence, which helps me successfully solve complex tasks. I enjoy working in a team, and I am always ready to collaborate with other developers to achieve collective success.",
   "page.about.freetime": "I like to keep abreast of the latest web development trends and technologies. In my free time, I like to be creative: composing music or creating videos.",
-  "page.about.goal": "My goal is to continue to develop as a developer and work on important projects that change the world for the better. I am always looking for new opportunities to learn and grow and am excited to see where my career will take me next.",
+  "page.about.goal": "My goal is to continue developing as a developer and work on impactful projects that make the world a better place. I'm always open to new opportunities for growth, and I eagerly anticipate where my career will lead me in the future.",
 
   "page.sendMeMessage.button": "Send me a message"
 }
