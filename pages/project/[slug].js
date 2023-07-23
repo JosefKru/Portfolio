@@ -47,7 +47,7 @@ const Project = ({ project, gallery }) => {
             autoPlay={true}
             items={items}
             showFullscreenButton={true}
-            showPlayButton={false}
+            showPlayButton={true}
             showBullets={true}
           />
         </div>

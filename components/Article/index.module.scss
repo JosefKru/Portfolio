@@ -7,9 +7,9 @@
 
   &Back {
     position: absolute;
-    left: 3rem;
-    font-size: 2rem;
+    left: 2rem;
     top: 5.2rem;
+    font-size: 3rem;
     color: black;
     text-decoration: none;
   }
@@ -21,6 +21,7 @@
 
     &Back {
       position: static;
+      font-size: 2rem;
     }
   }
 }

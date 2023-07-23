@@ -1,4 +1,18 @@
 .project {
+  a {
+    color: #4b86b4;
+    text-decoration: none;
+    background-color: transparent;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  a:hover {
+    background-color: #43ad76;
+    color: #ffffff;
+  }
+
   &Title {
     margin-bottom: 0.5rem;
   }

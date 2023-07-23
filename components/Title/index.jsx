@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './index.module.scss'
 import cl from 'classnames'
 
-const Title = ({ className, children, type, color }) => {
+const Title = ({ className, children, type }) => {
   if (type === 'small') {
     return (
       <h3 className={cl(className, styles.title, styles.titleSmall)}>
