@@ -11,7 +11,7 @@
 
 - [**Fixifoot**](https://fixifoot.com): Филиппинский онлайн-магазин. 
 
-- **Tokenopolis**: Инвестиционно-строительная компания.
+- [**Tokenopolis**](https://profile.tokenopolis.biz/): Инвестиционно-строительная компания.
 
 - [**Room4mommy**](https://room4mommy.vercel.app/): Онлайн-магазин детских вещей.
 
