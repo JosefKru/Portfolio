@@ -3,8 +3,8 @@ import styles from './index.module.scss'
 import cl from 'classnames'
 import Link from 'next/link'
 import Title from '../Title'
-import Image from 'next/image'
 import { urlFor } from '../../lib/client'
+import Image from 'next/image'
 
 const Portfolio = ({
   className,
