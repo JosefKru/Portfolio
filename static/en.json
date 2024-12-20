@@ -1,9 +1,8 @@
 {
   "page.about.greeting": "Hello! My name is Ivan, I'm a frontend developer from Moscow.",
-  "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, Redux toolkit, NextJS, Node.js, Fresh, Tailwind, Sanity.</span> I am constantly striving for development in this field and seeking opportunities to participate in interesting projects to expand my skills.",
-  "page.about.adaptable": "I have a strong drive for learning and independence, which helps me successfully solve complex tasks. I enjoy working in a team, and I am always ready to collaborate with other developers to achieve collective success.",
-  "page.about.freetime": "I like to keep abreast of the latest web development trends and technologies. In my free time, I like to be creative: composing music or creating videos.",
-  "page.about.goal": "My goal is to continue developing as a developer and work on impactful projects that make the world a better place. I'm always open to new opportunities for growth, and I eagerly anticipate where my career will lead me in the future.",
+  "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, React Hook Form, React Query, Redux Toolkit, Next.js, Node.js, Tailwind, NGINX, Git</span>, and other modern web development tools. I have experience working with high-load projects on microservices architecture in product teams, as well as smaller and medium-sized projects, including e-commerce solutions.",
+  "page.about.freetime": "I enjoy staying up-to-date with the latest trends and technologies in web development. I am actively focused on professional growth and always seek interesting projects that will allow me to deepen my knowledge and improve my skills. In my free time, I am passionate about creativity—whether it’s composing music or creating videos.",
+  "page.about.goal": "My goal is to continue developing as a developer, work on impactful projects, and contribute to creating innovative solutions. I am open to new opportunities for growth and eagerly await where my career will take me in the future.",
 
   "page.sendMeMessage.button": "Send me a message"
 }

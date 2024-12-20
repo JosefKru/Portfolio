@@ -16,7 +16,7 @@ const Portfolio = ({
 }) => {
   return (
     <Link
-      href={`/project/${encodeURIComponent(slug.current)}`}
+      href={`/project/${encodeURIComponent(slug?.current)}`}
       className={cl(className, styles.project)}
     >
       <a className={styles.projectLink}>

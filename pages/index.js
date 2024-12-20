@@ -65,7 +65,7 @@ export default function Home({ initialPortfolio, total }) {
           <PortfolioGrid>
             {portfolio.map((item) => (
               <Portfolio
-                key={item.slug.current}
+                key={item?.slug?.current}
                 isEnglish={isEnglish}
                 {...item}
               />
