@@ -8,7 +8,7 @@ import { SiCodewars } from 'react-icons/si'
 const socialNetworks = [
   {
     id: 1,
-    href: 'https://t.me/josefKru',
+    href: 'https://t.me/josefk_ru',
     icon: FaTelegram,
   },
   {
@@ -23,7 +23,7 @@ const socialNetworks = [
   },
   {
     id: 4,
-    href: 'https://hh.ru/applicant/resumes/view?resume=9fdec062ff0978f95d0039ed1f41766972754e',
+    href: '/CV.pdf',
     icon: FaPrint,
   },
 ]
