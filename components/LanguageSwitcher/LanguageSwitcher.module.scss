@@ -1,0 +1,28 @@
+.label {
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.labelHovered {
+  opacity: 1;
+}
+
+.switchWrapper {
+  :global {
+    .MuiSwitch-switchBase {
+      color: #5b9dd1;
+
+      &.Mui-checked {
+        color: #73d0a2;
+      }
+
+      &.Mui-checked + .MuiSwitch-track {
+        background-color: #73d0a2;
+      }
+    }
+
+    .MuiSwitch-track {
+      background-color: #5b9dd1;
+    }
+  }
+}

@@ -1,20 +1,30 @@
-import { FormControlLabel, Switch } from '@mui/material'
+import { FormControlLabel, Switch } from "@mui/material";
+import cl from "classnames";
+import { useState } from "react";
+import styles from "./LanguageSwitcher.module.scss";
 
 function LanguageSwitcher({ isEnglish, setIsEnglish }) {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
-    <div>
+    <div className={styles.switchWrapper}>
       <FormControlLabel
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
         control={
           <Switch
             checked={isEnglish}
             onChange={() => setIsEnglish(!isEnglish)}
-            color='primary'
           />
         }
-        label={isEnglish ? 'English' : 'Русский'}
+        label={
+          <span className={cl(styles.label, isHovered && styles.labelHovered)}>
+            {isEnglish ? 'Eng' : 'Рус'}
+          </span>
+        }
       />
     </div>
-  )
+  );
 }
 
-export default LanguageSwitcher
+export default LanguageSwitcher;
