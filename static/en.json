@@ -1,8 +1,13 @@
 {
   "page.about.greeting": "Hello! My name is Ivan, I'm a frontend developer from Moscow.",
   "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, React Hook Form, React Query, Redux Toolkit, Next.js, Node.js, Tailwind, NGINX, Git</span>, and other modern web development tools. I have experience working with high-load projects on microservices architecture in product teams, as well as smaller and medium-sized projects, including e-commerce solutions.",
-  "page.about.freetime": "I enjoy staying up-to-date with the latest trends and technologies in web development. I am actively focused on professional growth and always seek interesting projects that will allow me to deepen my knowledge and improve my skills. In my free time, I am passionate about creativity—whether it’s composing music or creating videos.",
+  "page.about.freetime": "I enjoy staying up-to-date with the latest trends and technologies in web development. I am actively focused on professional growth and always seek interesting projects that will allow me to deepen my knowledge and improve my skills. In my free time, I am passionate about creativity—whether it's composing music or creating videos.",
   "page.about.goal": "My goal is to continue developing as a developer, work on impactful projects, and contribute to creating innovative solutions. I am open to new opportunities for growth and eagerly await where my career will take me in the future.",
 
-  "page.sendMeMessage.button": "Send me a message"
+  "page.sendMeMessage.button": "Send me a message",
+
+  "page.404.title": "404",
+  "page.404.subtitle": "Page Not Found",
+  "page.404.description": "Oops! The page you're looking for doesn't exist. It might have been moved or deleted.",
+  "page.404.button": "Back to Home"
 }

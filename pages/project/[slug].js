@@ -9,49 +9,55 @@ import { useContext } from 'react'
 import { LanguageContext } from '../../contexts/LanguageContext'
 
 const Project = ({ project, gallery }) => {
-  const { isEnglish } = useContext(LanguageContext)
+  const { isEnglish, isInitialized } = useContext(LanguageContext)
 
-  const data = format(new Date(project.date), 'dd MMM yyyy')
-  const galleryOfItem = gallery.filter((item) => item._id === project._id)
+  const data = project?.date ? format(new Date(project.date), 'dd MMM yyyy') : ''
+  const galleryOfItem = gallery.filter((item) => item._id === project?._id)
 
-  const items = galleryOfItem[0].imagesGallery.map((_, index) => {
+  const items = galleryOfItem[0]?.imagesGallery?.map((_, index) => {
     return {
       original: galleryOfItem[0].imagesGallery[index].asset.url,
       thumbnail: urlFor(galleryOfItem[0].imagesGallery[index].asset.url).url(),
       originalHeight: '750px',
       thumbnailHeight: '60px',
     }
-  })
+  }) || []
+
+  if (!isInitialized) {
+    return null
+  }
 
   return (
     <Article backUrl='/'>
       <Head>
-        <title>{project.metaTitle}</title>
+        <title>{project?.metaTitle}</title>
         <base target='_blank' />
       </Head>
 
       <div className={styles.project}>
         <Title className={styles.projectTitle}>
-          {isEnglish ? project.title.en : project.title.ru}
+          {isEnglish ? project.title.en : project?.title.ru}
         </Title>
 
-        <p className={styles.projectData}>{data}</p>
+        {data && <p className={styles.projectData}>{data}</p>}
 
-        <div className={styles.projectImage}>
-          <ReactImageGallery
-            showThumbnails={true}
-            thumbnailPosition='bottom'
-            slideInterval={5000}
-            slideDuration={800}
-            showNav={true}
-            autoPlay={true}
-            items={items}
-            showFullscreenButton={true}
-            showPlayButton={true}
-            showBullets={true}
-          />
-        </div>
-        <Content body={isEnglish ? project.body.en : project.body.ru} />
+        {items && items.length > 0 && (
+          <div className={styles.projectImage}>
+            <ReactImageGallery
+              showThumbnails={true}
+              thumbnailPosition='bottom'
+              slideInterval={5000}
+              slideDuration={800}
+              showNav={true}
+              autoPlay={true}
+              items={items}
+              showFullscreenButton={true}
+              showPlayButton={true}
+              showBullets={true}
+            />
+          </div>
+        )}
+        <Content body={isEnglish ? project.body.en : project?.body.ru} />
       </div>
     </Article>
   )
@@ -91,6 +97,12 @@ export async function getStaticProps({ params: { slug }, query }) {
 
   const project = await client.fetch(query_project)
   const gallery = await client.fetch(query_gallery)
+
+  if (!project) {
+    return {
+      notFound: true,
+    }
+  }
 
   return {
     props: {

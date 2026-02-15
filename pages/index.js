@@ -24,7 +24,7 @@ export default function Home({ initialPortfolio, total }) {
   const [portfolio, setPortfolio] = useState(initialPortfolio)
   const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE_STEP)
   const [isLoading, setIsLoading] = useState(false)
-  const { isEnglish, setIsEnglish } = useContext(LanguageContext)
+  const { isEnglish, setIsEnglish, isInitialized } = useContext(LanguageContext)
 
   const showLoadButton = total > loadedAmount
 
@@ -41,6 +41,10 @@ export default function Home({ initialPortfolio, total }) {
       console.log(error)
       setIsLoading(false)
     }
+  }
+
+  if (!isInitialized) {
+    return null
   }
 
   return (
