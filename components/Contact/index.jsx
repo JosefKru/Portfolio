@@ -1,12 +1,15 @@
-import React, { createRef } from 'react'
+import { createRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 import styles from './index.module.scss'
 import { useForm } from 'react-hook-form'
 import toast, { Toaster } from 'react-hot-toast'
 
 export const contactRef = createRef(null)
+export const nameInputRef = createRef(null)
 
 const Contact = ({ isEnglish }) => {
+  const [isSending, setIsSending] = useState(false)
+
   const {
     register,
     handleSubmit,
@@ -16,39 +19,49 @@ const Contact = ({ isEnglish }) => {
     mode: 'onBlur',
   })
 
-  const onSubmit = (data) => {
-    sendEmail()
-    toast.success(
-      isEnglish
-        ? 'Your message has been sent'
-        : 'Ваше сообщение было отправлено',
-      {
-        duration: 5000,
-        iconTheme: {
-          primary: '#4b86b4',
-          secondary: '#fff',
-        },
-      }
-    )
-    reset()
-  }
+  const { ref: nameRegisterRef, ...nameRegisterRest } = register('name', {
+    required: true,
+  })
 
-  const sendEmail = (e) => {
-    emailjs
-      .sendForm(
-        'service_2e1bo9r',
-        'template_efeylm4',
-        contactRef.current,
-        'Ub7F2x9MTVHibIcxU'
-      )
-      .then(
-        (result) => {
-          console.log(result.text)
-        },
-        (error) => {
-          console.log(error.text)
+  const onSubmit = async (data) => {
+    setIsSending(true)
+    try {
+      await sendEmail()
+      toast.success(
+        isEnglish
+          ? 'Your message has been sent'
+          : 'Ваше сообщение было отправлено',
+        {
+          duration: 5000,
+          iconTheme: {
+            primary: '#4b86b4',
+            secondary: '#fff',
+          },
         }
       )
+      reset()
+    } catch (error) {
+      toast.error(
+        isEnglish
+          ? 'Failed to send message. Please try again.'
+          : 'Не удалось отправить сообщение. Попробуйте снова.',
+        {
+          duration: 5000,
+        }
+      )
+      console.error('EmailJS error:', error)
+    } finally {
+      setIsSending(false)
+    }
+  }
+
+  const sendEmail = () => {
+    return emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      contactRef.current,
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    )
   }
 
   return (
@@ -63,7 +76,11 @@ const Contact = ({ isEnglish }) => {
           type='text'
           name='name'
           placeholder={isEnglish ? 'Name' : 'Имя'}
-          {...register('name', { required: true })}
+          {...nameRegisterRest}
+          ref={(e) => {
+            nameRegisterRef(e)
+            nameInputRef.current = e
+          }}
           style={errors?.name && { borderColor: '#e3adad' }}
         />
 
@@ -89,7 +106,19 @@ const Contact = ({ isEnglish }) => {
               : 'Пожалуйста, заполните все поля'}
           </p>
         )}
-        <input type='submit' value={isEnglish ? 'Send message' : 'Отправить'} />
+        <input
+          type='submit'
+          value={
+            isSending
+              ? isEnglish
+                ? 'Sending...'
+                : 'Отправка...'
+              : isEnglish
+              ? 'Send message'
+              : 'Отправить'
+          }
+          disabled={isSending}
+        />
       </form>
     </>
   )
