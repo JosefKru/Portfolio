@@ -1,10 +1,9 @@
-import React from 'react'
-import styles from './index.module.scss'
-import cl from 'classnames'
-import Link from 'next/link'
-import Title from '../Title'
-import { urlFor } from '../../lib/client'
-import Image from 'next/image'
+import cl from "classnames";
+import Link from "next/link";
+import { urlFor } from "../../lib/client";
+import SkeletonImage from "../SkeletonImage";
+import Title from "../Title";
+import styles from "./index.module.scss";
 
 const Portfolio = ({
   className,
@@ -20,16 +19,18 @@ const Portfolio = ({
       className={cl(className, styles.project)}
     >
       <a className={styles.projectLink}>
-        <Title type='small' className={styles.projectTitle}>
+        <Title type="small" className={styles.projectTitle}>
           {isEnglish ? title.en : title.ru}
         </Title>
         <div className={styles.projectContent}>
           <div className={styles.projectImage}>
-            <Image
+            <SkeletonImage
               src={urlFor(imagesGallery[0]).url()}
-              layout='fill'
-              objectFit='contain'
-              alt=''
+              layout="fill"
+              objectFit="contain"
+              alt={isEnglish ? title.en : title.ru}
+              skeletonColor="#e8f4f9"
+              shimmerColor="rgba(91, 159, 204, 0.15)"
             />
           </div>
           <p className={styles.projectDescription}>
@@ -38,7 +39,7 @@ const Portfolio = ({
         </div>
       </a>
     </Link>
-  )
-}
+  );
+};
 
-export default Portfolio
+export default Portfolio;

@@ -1,17 +1,37 @@
 .article {
   position: relative;
-  padding: 1.5rem 4rem 3rem 6rem;
+  padding: 1.5rem 4rem 3rem 4rem;
   max-width: 1300px;
   margin: 0 auto;
   box-sizing: border-box;
 
   &Back {
-    position: absolute;
-    left: 2rem;
-    top: 5.2rem;
+    position: fixed;
+    left: 1rem;
+    top: 1.5rem;
     font-size: 3rem;
-    color: black;
+    color: #5b9fcc;
     text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: rgba(91, 159, 204, 0.1);
+    z-index: 100;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #5b9fcc;
+      transform: translateX(-4px);
+    }
+
+    &:active {
+      transform: translateX(-4px) scale(0.95);
+    }
   }
 }
 
@@ -20,8 +40,14 @@
     padding: 1rem;
 
     &Back {
-      position: static;
+      position: fixed;
+      left: auto;
+      right: 1rem;
+      top: 1rem;
       font-size: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      margin-bottom: 0;
     }
   }
 }
