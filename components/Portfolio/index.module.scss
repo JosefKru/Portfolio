@@ -35,13 +35,30 @@
 @media only screen and (max-width: 800px) {
   .project {
     &Image {
-      width: 320px;
+      width: 400px;
       height: 200px;
     }
 
     &Content {
       grid-template-rows: 10rem 1fr;
+      gap: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .project {
+    &Image {
+      width: 330px;
+      height: 165px;
+    }
+
+    &Content {
       gap: 0;
+    }
+
+    &Description {
+      margin-top: 0;
     }
   }
 }

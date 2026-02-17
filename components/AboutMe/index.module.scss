@@ -5,12 +5,35 @@
     padding-right: 20px;
     width: 700px;
     color: #6e6e6e;
+    font-size: 16px;
+    line-height: 1.8;
 
     span {
       color: #303030;
+      font-weight: 600;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: #4b86b4;
+      }
     }
+
     p {
       margin-top: 0;
+      margin-bottom: 24px;
+
+      &:first-child {
+        font-size: 18px;
+        background: linear-gradient(135deg, #4b86b4 0%, #43ad76 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 600;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
@@ -34,8 +57,15 @@
     }
 
     &Description {
-      width: 300px;
+      width: 100%;
       margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.7;
+      padding-right: 0;
+
+      p:first-child {
+        font-size: 17px;
+      }
     }
     &Title {
       margin-top: 350px;

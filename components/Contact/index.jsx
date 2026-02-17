@@ -23,7 +23,7 @@ const Contact = ({ isEnglish }) => {
     required: true,
   })
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSending(true)
     try {
       await sendEmail()

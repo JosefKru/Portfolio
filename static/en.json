@@ -1,8 +1,8 @@
 {
-  "page.about.greeting": "Hello! My name is Ivan, I'm a frontend developer from Moscow.",
-  "page.about.technical": "My technical skills include <span>HTML, CSS, JavaScript, TypeScript, React, React Hook Form, React Query, Redux Toolkit, Next.js, Node.js, Tailwind, NGINX, Git</span>, and other modern web development tools. I have experience working with high-load projects on microservices architecture in product teams, as well as smaller and medium-sized projects, including e-commerce solutions.",
-  "page.about.freetime": "I enjoy staying up-to-date with the latest trends and technologies in web development. I am actively focused on professional growth and always seek interesting projects that will allow me to deepen my knowledge and improve my skills. In my free time, I am passionate about creativity—whether it's composing music or creating videos.",
-  "page.about.goal": "My goal is to continue developing as a developer, work on impactful projects, and contribute to creating innovative solutions. I am open to new opportunities for growth and eagerly await where my career will take me in the future.",
+  "page.about.greeting": "Hi! My name is Ivan, I'm a frontend developer from Moscow.",
+  "page.about.technical": "I work with <span>React, TypeScript, Redux Toolkit, RTK / TanStack Query</span>, and specialize in microfrontend architecture (<span>Webpack Module Federation</span>). I have experience developing high-load systems in product teams (<span>Sberbank</span>) and enterprise applications for major industrial clients (<span>EVRAZ, SIBUR</span>). I've worked with <span>Next.js, Node.js, Vite, Storybook, GSAP</span>, and set up <span>CI/CD (Jenkins)</span> and deployment (<span>Nginx</span>).",
+  "page.about.freetime": "I'm constantly learning new technologies: currently diving deeper into microfrontend architecture and 3D animation (<span>Three.js, shaders</span>). In my free time, I experiment with <span>AI and API integrations</span> — I've built several Telegram bots with <span>OpenAI API, Google Calendar</span>, and other services. I'm also into creative pursuits: I write music (been playing guitar for 15+ years), edit videos, draw, and do handicrafts — I love creating new things and experimenting.",
+  "page.about.goal": "I'm looking for opportunities to work on complex technical challenges where I can apply my experience with microfrontend architecture and contribute to building innovative products.",
 
   "page.sendMeMessage.button": "Send me a message",
 
