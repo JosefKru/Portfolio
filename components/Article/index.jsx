@@ -1,6 +1,5 @@
 import cl from 'classnames'
 import Link from 'next/link'
-import React from 'react'
 import styles from './index.module.scss'
 import { FiArrowLeft } from 'react-icons/fi'
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import { createElement } from 'react'
 import styles from './index.module.scss'
 import cl from 'classnames'
 import ScreenEgg from '../ScreenEgg'
@@ -40,7 +40,7 @@ const SocialNetworks = ({ className }) => {
               rel='noreferrer'
               className={styles.listLink}
             >
-              {React.createElement(sn.icon, {
+              {createElement(sn.icon, {
                 color: 'black',
                 size: 50,
               })}
