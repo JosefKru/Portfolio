@@ -9,7 +9,7 @@ const ScreenEgg = ({ className, type, children }) => {
 
   const hiddenX = isLeft ? 'calc(-100% + 1.9rem)' : 'calc(100% - 1.9rem)'
   useEffect(() => {
-    const peekOut = isLeft ? 'calc(-100% + 2.8rem)' : 'calc(100% - 2.8rem)'
+    const peekOut = isLeft ? 'calc(-100% + 4rem)' : 'calc(100% - 4rem)'
     const hiddenPos = isLeft ? 'calc(-100% + 1.9rem)' : 'calc(100% - 1.9rem)'
     const initialDelay = isLeft ? 5000 : 15000
     let seen = false
