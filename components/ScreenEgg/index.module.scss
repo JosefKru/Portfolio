@@ -12,23 +12,15 @@
 
   &Right {
     padding-left: 2rem;
-    transform: translate(calc(100% - 1.9rem), 0);
     top: 10%;
     right: 0;
-    transition: transform 0.5s ease-out;
   }
 
   &Left {
     padding-right: 2rem;
-    transform: translate(calc(-100% + 1.9rem), 0);
     bottom: 10%;
     left: 0;
-    transition: transform 0.3s ease-out;
     background-color: #73d0a2;
-  }
-
-  &:hover {
-    transform: translate(0, 0);
   }
 }
 
@@ -40,8 +32,7 @@
 
     &Right,
     &Left {
-      transition: none;
-      transform: none;
+      transform: none !important;
     }
 
     ul {
