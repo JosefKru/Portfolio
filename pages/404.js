@@ -7,8 +7,8 @@ import styles from '../styles/404.module.scss'
 import Button from '../components/Button'
 import { LanguageContext } from '../contexts/LanguageContext'
 
-import en from '../static/en.json'
-import ru from '../static/ru.json'
+import en from '../locales/en.json'
+import ru from '../locales/ru.json'
 
 function Page404() {
   const router = useRouter()

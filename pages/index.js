@@ -14,8 +14,8 @@ import {
 } from '../components'
 import { loadData } from './api/data'
 import { IntlProvider } from 'react-intl'
-import en from './../static/en.json'
-import ru from './../static/ru.json'
+import en from './../locales/en.json'
+import ru from './../locales/ru.json'
 import { LanguageContext } from '../contexts/LanguageContext'
 
 const LOAD_MORE_STEP = 2
