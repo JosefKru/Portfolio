@@ -16,27 +16,14 @@ const ScreenEgg = ({ className, type, children }) => {
     let seen = false;
 
     const pulse = async () => {
-      if (seen) return;
-      await animate(
-        scope.current,
-        { x: peekOut },
-        { duration: 0.4, ease: "easeInOut" },
-      );
-      await animate(
-        scope.current,
-        { x: hiddenPos },
-        { duration: 0.4, ease: "easeInOut" },
-      );
-      await animate(
-        scope.current,
-        { x: peekOut },
-        { duration: 0.4, ease: "easeInOut" },
-      );
-      await animate(
-        scope.current,
-        { x: hiddenPos },
-        { duration: 0.4, ease: "easeInOut" },
-      );
+      if (seen || !scope.current) return;
+      await animate(scope.current, { x: peekOut }, { duration: 0.4, ease: "easeInOut" });
+      if (!scope.current) return;
+      await animate(scope.current, { x: hiddenPos }, { duration: 0.4, ease: "easeInOut" });
+      if (!scope.current) return;
+      await animate(scope.current, { x: peekOut }, { duration: 0.4, ease: "easeInOut" });
+      if (!scope.current) return;
+      await animate(scope.current, { x: hiddenPos }, { duration: 0.4, ease: "easeInOut" });
     };
 
     let interval;
