@@ -1,0 +1,54 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+}
+
+.skeleton {
+  position: absolute;
+  inset: 0;
+  background-color: #e8f4f9;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.shimmer {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(91, 159, 204, 0.15) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  opacity: 0;
+}
+
+.videoVisible {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media only screen and (max-width: 800px) {
+  .wrapper {
+    height: 300px;
+  }
+}

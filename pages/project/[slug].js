@@ -1,12 +1,13 @@
 import { format } from "date-fns";
 import Head from "next/head";
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import {
   Article,
   Content,
   ImageGalleryWithSkeleton,
   Title,
 } from "../../components";
+import VideoWithSkeleton from "../../components/VideoWithSkeleton";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import { client } from "../../lib/client";
 import { urlFor } from "./../../lib/client";
@@ -14,6 +15,14 @@ import styles from "./styles.module.scss";
 
 const Project = ({ project, gallery }) => {
   const { isEnglish, isInitialized } = useContext(LanguageContext);
+  const galleryRef = useRef(null);
+
+  useEffect(() => {
+    if (items[0]?.isVideo) {
+      const timer = setTimeout(() => galleryRef.current?.pause(), 100);
+      return () => clearTimeout(timer);
+    }
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const data = project?.date
     ? format(new Date(project.date), "dd MMM yyyy")
@@ -21,16 +30,44 @@ const Project = ({ project, gallery }) => {
   const galleryOfItem = gallery.filter((item) => item._id === project?._id);
 
   const items =
-    galleryOfItem[0]?.imagesGallery?.map((_, index) => {
+    galleryOfItem[0]?.imagesGallery?.map((item) => {
+      const isVideo = item._type === "file";
       return {
-        original: galleryOfItem[0].imagesGallery[index].asset.url,
-        thumbnail: urlFor(
-          galleryOfItem[0].imagesGallery[index].asset.url,
-        ).url(),
+        original: item.asset.url,
+        thumbnail: isVideo ? item.asset.url : urlFor(item.asset.url).url(),
         originalHeight: "750px",
         thumbnailHeight: "60px",
+        isVideo,
+        renderItem: isVideo
+          ? () => (
+              <VideoWithSkeleton
+                src={item.asset.url}
+                onEnded={() => galleryRef.current?.play()}
+              />
+            )
+          : undefined,
+        renderThumbInner: isVideo
+          ? () => (
+              <video
+                src={item.asset.url}
+                style={{ height: "60px", width: "100%", objectFit: "cover" }}
+                muted
+              />
+            )
+          : undefined,
       };
     }) || [];
+
+  const onSlide = (index) => {
+    if (items[index]?.isVideo) {
+      galleryRef.current?.pause();
+      const video = document.querySelector('.image-gallery-slide.center video');
+      if (video) {
+        video.currentTime = 0;
+        video.play();
+      }
+    }
+  };
 
   if (!isInitialized) {
     return null;
@@ -53,6 +90,7 @@ const Project = ({ project, gallery }) => {
         {items && items.length > 0 && (
           <div className={styles.projectImage}>
             <ImageGalleryWithSkeleton
+              ref={galleryRef}
               items={items}
               showThumbnails={true}
               thumbnailPosition="bottom"
@@ -65,6 +103,7 @@ const Project = ({ project, gallery }) => {
               showBullets={true}
               skeletonColor="#e8f4f9"
               shimmerColor="rgba(91, 159, 204, 0.15)"
+              onSlide={onSlide}
             />
           </div>
         )}
@@ -97,11 +136,12 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params: { slug }, query }) {
+export async function getStaticProps({ params: { slug } }) {
   const query_project = `*[_type == "toys" && slug.current == '${slug}'][0]`;
   const query_gallery = `*[_type == "toys"] {
     _id,
     imagesGallery[] {
+      _type,
       asset->{url}
     }
   }`;

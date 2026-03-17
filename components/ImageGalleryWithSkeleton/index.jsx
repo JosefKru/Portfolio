@@ -1,15 +1,15 @@
-import { useState } from 'react'
+import { forwardRef, useState } from 'react'
 import ReactImageGallery from 'react-image-gallery'
 import styles from './index.module.scss'
 import cl from 'classnames'
 
-const ImageGalleryWithSkeleton = ({
+const ImageGalleryWithSkeleton = forwardRef(({
   items,
   className,
   skeletonColor = '#e8f4f9',
   shimmerColor = 'rgba(91, 159, 204, 0.15)',
   ...galleryProps
-}) => {
+}, ref) => {
   const [isLoaded, setIsLoaded] = useState(false)
 
   const handleImageLoad = () => {
@@ -35,6 +35,7 @@ const ImageGalleryWithSkeleton = ({
         })}
       >
         <ReactImageGallery
+          ref={ref}
           items={items}
           onImageLoad={handleImageLoad}
           {...galleryProps}
@@ -42,6 +43,8 @@ const ImageGalleryWithSkeleton = ({
       </div>
     </div>
   )
-}
+})
+
+ImageGalleryWithSkeleton.displayName = 'ImageGalleryWithSkeleton'
 
 export default ImageGalleryWithSkeleton

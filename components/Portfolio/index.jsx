@@ -13,6 +13,8 @@ const Portfolio = ({
   slug,
   isEnglish,
 }) => {
+  const firstImage = imagesGallery?.find((item) => item._type === "image");
+
   return (
     <Link
       href={`/project/${encodeURIComponent(slug?.current)}`}
@@ -24,14 +26,14 @@ const Portfolio = ({
         </Title>
         <div className={styles.projectContent}>
           <div className={styles.projectImage}>
-            <SkeletonImage
-              src={urlFor(imagesGallery[0]).url()}
+            {firstImage && <SkeletonImage
+              src={urlFor(firstImage).url()}
               layout="fill"
               objectFit="contain"
               alt={isEnglish ? title.en : title.ru}
               skeletonColor="#e8f4f9"
               shimmerColor="rgba(91, 159, 204, 0.15)"
-            />
+            />}
           </div>
           <p className={styles.projectDescription}>
             {isEnglish ? description.en : description.ru}

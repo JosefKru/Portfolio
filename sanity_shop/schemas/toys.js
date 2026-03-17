@@ -39,9 +39,16 @@ export default {
     },
     {
       name: 'imagesGallery',
-      title: 'Image',
+      title: 'Image / Video',
       type: 'array',
-      of: [{ type: 'image' }],
+      of: [
+        { type: 'image' },
+        {
+          type: 'file',
+          title: 'Video',
+          options: { accept: 'video/*' },
+        },
+      ],
       options: {
         hotspot: true,
       },
@@ -75,14 +82,14 @@ export default {
           title: 'English',
           name: 'en',
           type: 'array',
-          of: [{ type: 'block' }, { type: 'image' }],
+          of: [{ type: 'block' }, { type: 'image' }, { type: 'file', title: 'Video', options: { accept: 'video/*' } }],
           validation: (Rule) => Rule.required(),
         },
         {
           title: 'Russian',
           name: 'ru',
           type: 'array',
-          of: [{ type: 'block' }, { type: 'image' }],
+          of: [{ type: 'block' }, { type: 'image' }, { type: 'file', title: 'Video', options: { accept: 'video/*' } }],
           validation: (Rule) => Rule.required(),
         },
       ],
