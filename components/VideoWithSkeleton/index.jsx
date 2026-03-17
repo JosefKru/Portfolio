@@ -9,6 +9,7 @@ const VideoWithSkeleton = ({ src, onEnded }) => {
       {!isReady && (
         <div className={styles.skeleton}>
           <div className={styles.shimmer} />
+          <p className={styles.skeletonText}>Видео загружается, пожалуйста подождите...</p>
         </div>
       )}
       <video

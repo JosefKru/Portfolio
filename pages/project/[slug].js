@@ -48,11 +48,9 @@ const Project = ({ project, gallery }) => {
           : undefined,
         renderThumbInner: isVideo
           ? () => (
-              <video
-                src={item.asset.url}
-                style={{ height: "60px", width: "100%", objectFit: "cover" }}
-                muted
-              />
+              <div className={styles.videoThumb}>
+                <span className={styles.videoThumbIcon}>▶</span>
+              </div>
             )
           : undefined,
       };
